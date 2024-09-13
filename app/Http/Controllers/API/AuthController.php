@@ -37,4 +37,13 @@ class AuthController extends Controller
             'message' => 'User logged in successfully'
         ]);
     }
+
+    public function getImageUserProfile(){
+        $user = auth()->user();
+        return response()->json([
+            'success' => true,
+            'data' => $user->image_url,
+            'message' => 'Success get image user profile'
+        ]);
+    }
 }
